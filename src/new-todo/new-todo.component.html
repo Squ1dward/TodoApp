@@ -1,0 +1,30 @@
+<div style="color: #eeeeee; user-select: none">
+  <div>Name:</div>
+  <input name="name" [(ngModel)]="this.name" style="width: 500px; background-color: transparent; color: #eeeeee"/>
+  <br>
+  <br>
+  <div style="width: 500px;">
+    <div>Frist:</div>
+  </div>
+  <div style="width: 500px;">
+    <input name="until" [(ngModel)]="until" type="date" style="width: 500px; float: left; background-color: transparent; color: #eeeeee"/>
+  </div>
+  <br>
+  <br>
+  <div>Kategorie:</div>
+  <select name="categories" style="width: 500px; background-color: transparent; color: #eeeeee" [(ngModel)]="category">
+    <option style="color: #eeeeee; background-color: #222222" *ngFor="let categories of dataTableService.categories" [ngValue]="categories">
+      <ng-container *ngIf="categories.name != ''; else e">
+        {{categories.name}}
+      </ng-container>
+      <ng-template #e>
+        -
+      </ng-template>
+    </option>
+  </select>
+  <br>
+  <br>
+  <button style="width: 500px; background-color: transparent; color: #eeeeee" (click)="create()">
+    add
+  </button>
+</div>

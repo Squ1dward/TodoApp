@@ -1,0 +1,13 @@
+div {
+  user-select: none;
+}
+
+.hoverGlow {
+  color: #eeeeee;
+  transition: 0.5s;
+}
+
+.hoverGlow:hover {
+  color: #555555;
+  transition: 0.5s;
+}

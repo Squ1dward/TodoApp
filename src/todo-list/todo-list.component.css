@@ -1,0 +1,51 @@
+.mat-icon {
+  transition: 0.5s;
+  margin: 5px;
+}
+
+.thead {
+  user-select: none;
+}
+
+.head-row {
+  background-color:darkslategray ;
+  color: darkgray;
+}
+
+.todo-table {
+  width: 1390px;
+}
+
+.rows {
+  background-color: darkslategrey;
+  transition: 0.5s;
+  height: 40px;
+  color: darkslategrey;
+  border: darkslategrey 1px solid;
+  font: 18px Arial bold;
+}
+
+.rows:nth-child(odd) {
+  background-color: #eeeeee;
+}
+
+.rows:hover {
+  background-color: #bbbbbb;
+  transition: 0.5s;
+  color: darkslategrey;
+  border: darkslategrey 1px solid;
+}
+.hoverGlow {
+  color: darkslategrey;
+  transition: 0.5s;
+}
+
+.hoverGlow:hover {
+  color: darkslategrey;
+  transition: 0.5s;
+}
+
+.hoverGlow:focus {
+  color: darkslategrey;
+  transition: 0.5s;
+}

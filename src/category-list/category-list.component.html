@@ -1,0 +1,25 @@
+<div style="width: 300px; font-size: 18px; float: left; margin-top: 30px">
+  <div style="margin: 8px; color: #888888; direction: rtl">
+    <div style="margin-right: 24px" (click)="dataTableService.selected = undefined">
+      <b class="hoverGlow" *ngIf="dataTableService.selected === undefined; else elseBlock">All</b>
+      <ng-template #elseBlock>
+        <label class="hoverGlow">All</label>
+      </ng-template>
+    </div>
+
+    <div style="margin-top: 8px" *ngFor="let category of dataTableService.categories">
+      <div *ngIf="category != dataTableService.categories[0]" name="cate" (click)="dataTableService.selected = category">
+        <button class="hoverGlow" style="background-color: transparent; border: none; margin-right: 2px;" (click)="dataTableService.removeCategory(category)"><b>-</b></button>
+        <b *ngIf="dataTableService.selected == category; else elseBlock" class="hoverGlow">{{category.name + ' '}}</b>
+        <ng-template #elseBlock>
+          <label class="hoverGlow" style="margin-right: 3px">{{category.name + ' '}}</label>
+        </ng-template>
+      </div>
+    </div>
+
+    <div style="margin-top: 8px">
+      <button style="color: #eeeeee; background-color: transparent; border: none" (click)="dataTableService.addCategory()">+</button>
+      <input style="background-color: transparent; color: #eeeeee" [(ngModel)]="dataTableService.catName" (keyup.enter)="dataTableService.addCategory()">
+    </div>
+  </div>
+</div>
